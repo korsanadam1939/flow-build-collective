@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold gradient-text mb-4">Yazılım Ajansı</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-4">ngn digital</h3>
             <p className="text-muted-foreground max-w-md">
               Modern teknolojiler ile işinizi dijital dünyada zirveye taşıyoruz. 
               Mobil, web ve otomasyon çözümlerinde uzman ekip.
@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-primary/20 text-center text-muted-foreground">
-          <p>&copy; {currentYear} Yazılım Ajansı. Tüm hakları saklıdır.</p>
+          <p>&copy; {currentYear} ngn digital. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>
