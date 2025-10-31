@@ -16,23 +16,23 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-primary/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-primary/30 shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-2xl font-bold gradient-text">
-            ngn digital
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="text-2xl md:text-3xl font-bold gradient-text hover:scale-105 transition-transform">
+            apexiscode
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium px-4 py-2 rounded-lg transition-all ${
                   isActive(item.href)
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-primary"
+                    ? "text-primary bg-primary/10 shadow-sm"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                 }`}
               >
                 {item.name}

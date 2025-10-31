@@ -5,38 +5,38 @@ const services = [
   {
     icon: Smartphone,
     title: "Mobil Uygulama Geliştirme",
-    description: "iOS ve Android platformları için native ve cross-platform mobil uygulamalar. Kullanıcı deneyimi odaklı, performanslı çözümler.",
-    features: ["React Native", "Flutter", "Native iOS/Android"]
+    description: "iOS ve Android platformları için enterprise düzeyinde mobil çözümler. Kullanıcı deneyimi odaklı, yüksek performanslı ve güvenli uygulamalar geliştiriyoruz.",
+    features: ["React Native", "Flutter", "Swift & Kotlin", "Cross-Platform", "Native Performance"]
   },
   {
     icon: Globe,
     title: "Web Uygulama Geliştirme",
-    description: "Modern, responsive ve hızlı web uygulamaları. SEO uyumlu, ölçeklenebilir ve güvenli çözümler.",
-    features: ["React/Next.js", "Full-Stack", "E-Ticaret"]
+    description: "Modern teknolojiler kullanarak responsive, hızlı ve SEO optimize web uygulamaları. Ölçeklenebilir mimari ve güvenli altyapı ile işinizi dijital dünyada öne çıkarıyoruz.",
+    features: ["React & Next.js", "TypeScript", "Full-Stack Development", "E-Commerce", "Progressive Web Apps"]
   },
   {
     icon: Workflow,
-    title: "n8n Otomasyon Çözümleri",
-    description: "İş süreçlerinizi otomatikleştirin, verimliliği artırın. API entegrasyonları ve akıllı iş akışları.",
-    features: ["Workflow Automation", "API Integration", "Custom Workflows"]
+    title: "İş Süreçleri Otomasyonu",
+    description: "n8n ve özel otomasyon çözümleriyle iş süreçlerinizi dijitalleştirin. Tekrarlayan görevleri otomatikleştirerek ekibinizin verimliliğini artırın ve maliyetleri düşürün.",
+    features: ["Workflow Automation", "API Entegrasyonu", "Veri Senkronizasyonu", "Özel İş Akışları", "CRM Entegrasyonu"]
   },
   {
     icon: Code,
     title: "Özel Yazılım Geliştirme",
-    description: "İşinize özel, sıfırdan tasarlanmış yazılım çözümleri. Tüm ihtiyaçlarınıza uygun, esnek yapı.",
-    features: ["Custom Solutions", "Legacy Modernization", "MVP Development"]
+    description: "İşinizin benzersiz ihtiyaçlarına özel, sıfırdan tasarlanmış yazılım çözümleri. Esnek mimari ve modern teknolojiler ile geleceğe hazır sistemler kuruyoruz.",
+    features: ["Özel Çözümler", "Legacy Modernizasyonu", "MVP Geliştirme", "API Development", "Mikroservis Mimarisi"]
   },
   {
     icon: Palette,
     title: "UI/UX Tasarım",
-    description: "Kullanıcı deneyimini ön planda tutan, modern ve şık arayüz tasarımları. Brand kimliğinize uygun çözümler.",
-    features: ["User Research", "Prototyping", "Design Systems"]
+    description: "Kullanıcı araştırması ve veri odaklı tasarım yaklaşımı ile markanıza özel, modern ve kullanıcı dostu arayüzler tasarlıyoruz. Dönüşüm odaklı deneyimler yaratıyoruz.",
+    features: ["User Research", "Prototyping", "Design Systems", "Usability Testing", "Brand Identity"]
   },
   {
     icon: Zap,
-    title: "Danışmanlık & Destek",
-    description: "Teknoloji danışmanlığı ve 7/24 teknik destek. Projelerinizin her aşamasında yanınızdayız.",
-    features: ["Tech Consulting", "24/7 Support", "Training"]
+    title: "Teknoloji Danışmanlığı",
+    description: "Dijital dönüşüm yolculuğunuzda stratejik teknoloji danışmanlığı ve 7/24 teknik destek. Projelerinizin her aşamasında yanınızdayız.",
+    features: ["Tech Consulting", "Mimari Tasarım", "24/7 Support", "Eğitim & Workshop", "Performans Optimizasyonu"]
   }
 ];
 
@@ -59,32 +59,36 @@ const Services = () => {
             return (
               <Card 
                 key={service.title}
-                className="card-glass p-8 hover:scale-105 transition-all duration-300 cursor-pointer group animate-slide-up border-primary/20"
+                className="card-glass p-8 hover:scale-[1.02] hover:shadow-2xl transition-all duration-500 cursor-pointer group animate-slide-up border-primary/20 relative overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="mb-6">
-                  <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all">
-                    <Icon className="w-8 h-8 text-primary" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="mb-6">
+                    <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300 group-hover:scale-110">
+                      <Icon className="w-8 h-8 text-primary" />
+                    </div>
                   </div>
-                </div>
 
-                <h3 className="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">
-                  {service.title}
-                </h3>
+                  <h3 className="text-2xl font-bold mb-4 group-hover:gradient-text transition-all duration-300">
+                    {service.title}
+                  </h3>
 
-                <p className="text-muted-foreground mb-6">
-                  {service.description}
-                </p>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {service.features.map((feature) => (
-                    <span 
-                      key={feature}
-                      className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20"
-                    >
-                      {feature}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap gap-2">
+                    {service.features.map((feature) => (
+                      <span 
+                        key={feature}
+                        className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 group-hover:bg-primary/15 group-hover:border-primary/30 transition-all duration-300"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </Card>
             );
