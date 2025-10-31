@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Smartphone, Globe, Workflow } from "lucide-react";
 
@@ -53,6 +54,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
+      <Testimonials />
       
       <Footer />
     </div>
