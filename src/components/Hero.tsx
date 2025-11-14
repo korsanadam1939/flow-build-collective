@@ -7,7 +7,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20">
       {/* Animated Coding Background */}
       <div className="absolute inset-0 z-0">
         {/* Matrix-style falling code lines */}
