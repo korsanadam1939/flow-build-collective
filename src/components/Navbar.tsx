@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +19,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-primary/30 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center hover:scale-105 transition-transform">
-            <img src={logo} alt="apexiscode" className="h-12 md:h-14" />
+          <Link to="/" className="text-2xl md:text-3xl font-bold hover:scale-105 transition-transform" style={{ color: '#d4ff00' }}>
+            apexiscode
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -9,16 +8,25 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
+      {/* Geometric Pattern Background */}
+      <div className="absolute inset-0 z-0 bg-background">
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(#d4ff00 1px, transparent 1px), linear-gradient(90deg, #d4ff00 1px, transparent 1px)`,
+            backgroundSize: '50px 50px',
+            opacity: 0.1
+          }} />
+        </div>
+        
+        {/* Animated Code Blocks */}
+        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/30 rounded-lg animate-float" />
+        <div className="absolute top-40 right-20 w-24 h-24 border-2 border-primary/20 rounded-lg animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-40 left-1/4 w-20 h-20 border-2 border-primary/25 rounded-lg animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-20 right-1/3 w-28 h-28 border-2 border-primary/30 rounded-lg animate-float" style={{ animationDelay: '0.5s' }} />
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
 
       {/* Animated Gradient Orbs */}
