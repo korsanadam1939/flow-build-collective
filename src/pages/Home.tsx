@@ -30,26 +30,44 @@ const Home = () => {
       <Hero />
       
       {/* Quick highlights section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text">
               Dijital Çözümlerinizde Yanınızdayız
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Modern teknolojiler ve uzman ekibimizle projelerinizi hayata geçiriyoruz
+            <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+              Modern teknolojiler ve uzman ekibimizle projelerinizi hayata geçiriyoruz. 
+              İnovatif çözümlerimizle işinizi geleceğe taşıyoruz.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {highlights.map((item, index) => (
-              <Card key={index} className="card-glass hover-scale">
+              <Card key={index} className="card-glass hover-scale group border-primary/20 hover:border-primary/50 transition-all duration-300">
                 <CardHeader>
-                  <div className="mb-4">{item.icon}</div>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardDescription>{item.description}</CardDescription>
+                  <div className="mb-6 p-4 bg-primary/10 rounded-xl w-fit group-hover:bg-primary/20 transition-colors">{item.icon}</div>
+                  <CardTitle className="text-2xl mb-3">{item.title}</CardTitle>
+                  <CardDescription className="text-base">{item.description}</CardDescription>
                 </CardHeader>
               </Card>
+            ))}
+          </div>
+          
+          {/* Additional Features Grid */}
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { title: "Hızlı Teslimat", desc: "Zamanında teslim" },
+              { title: "Modern Stack", desc: "Son teknolojiler" },
+              { title: "SEO Optimize", desc: "Arama motorlarında üst sıralarda" },
+              { title: "Mobil Uyumlu", desc: "Tüm cihazlarda mükemmel" }
+            ].map((feature, index) => (
+              <div key={index} className="text-center p-6 rounded-xl bg-card/50 border border-primary/10 hover:border-primary/30 transition-colors">
+                <div className="text-2xl font-bold text-primary mb-2">✓</div>
+                <div className="font-semibold mb-1">{feature.title}</div>
+                <div className="text-sm text-muted-foreground">{feature.desc}</div>
+              </div>
             ))}
           </div>
         </div>
