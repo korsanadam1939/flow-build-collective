@@ -1,42 +1,42 @@
 import { Card } from "@/components/ui/card";
-import { Smartphone, Globe, Workflow, Code, Palette, Zap } from "lucide-react";
+import { Smartphone, Globe, Workflow, Database, Cloud, Shield } from "lucide-react";
 
 const services = [
   {
     icon: Smartphone,
     title: "Mobil Uygulama Geliştirme",
-    description: "iOS ve Android platformları için enterprise düzeyinde mobil çözümler. Kullanıcı deneyimi odaklı, yüksek performanslı ve güvenli uygulamalar geliştiriyoruz.",
-    features: ["React Native", "Flutter", "Swift & Kotlin", "Cross-Platform", "Native Performance"]
+    description: "iOS ve Android için native performanslı, kullanıcı dostu mobil uygulamalar. Modern teknolojiler ve en iyi pratiklerle geliştirilen, her cihazda mükemmel çalışan çözümler.",
+    features: ["React Native", "Flutter", "Native Development", "App Store Yayınlama", "Push Notification"]
   },
   {
     icon: Globe,
-    title: "Web Uygulama Geliştirme",
-    description: "Modern teknolojiler kullanarak responsive, hızlı ve SEO optimize web uygulamaları. Ölçeklenebilir mimari ve güvenli altyapı ile işinizi dijital dünyada öne çıkarıyoruz.",
-    features: ["React & Next.js", "TypeScript", "Full-Stack Development", "E-Commerce", "Progressive Web Apps"]
+    title: "Web Uygulama & E-Ticaret",
+    description: "Hızlı, güvenli ve SEO optimize modern web uygulamaları. E-ticaret platformları, kurumsal web siteleri ve SaaS çözümleri ile dijital varlığınızı güçlendiriyoruz.",
+    features: ["React & Next.js", "E-Commerce Platform", "CMS Entegrasyonu", "SEO Optimizasyonu", "Responsive Design"]
   },
   {
     icon: Workflow,
     title: "İş Süreçleri Otomasyonu",
-    description: "n8n ve özel otomasyon çözümleriyle iş süreçlerinizi dijitalleştirin. Tekrarlayan görevleri otomatikleştirerek ekibinizin verimliliğini artırın ve maliyetleri düşürün.",
-    features: ["Workflow Automation", "API Entegrasyonu", "Veri Senkronizasyonu", "Özel İş Akışları", "CRM Entegrasyonu"]
+    description: "Manuel iş akışlarınızı otomatikleştirerek zamandan ve maliyetten tasarruf edin. n8n, Zapier ve özel entegrasyonlar ile verimliliği maksimize ediyoruz.",
+    features: ["n8n Workflow", "API Entegrasyonu", "Otomatik Raporlama", "CRM & ERP Bağlantısı", "Email Otomasyonu"]
   },
   {
-    icon: Code,
-    title: "Özel Yazılım Geliştirme",
-    description: "İşinizin benzersiz ihtiyaçlarına özel, sıfırdan tasarlanmış yazılım çözümleri. Esnek mimari ve modern teknolojiler ile geleceğe hazır sistemler kuruyoruz.",
-    features: ["Özel Çözümler", "Legacy Modernizasyonu", "MVP Geliştirme", "API Development", "Mikroservis Mimarisi"]
+    icon: Database,
+    title: "Veri Yönetimi & Analitik",
+    description: "Büyük veri setlerini yönetin, analiz edin ve işlem yapılabilir içgörüler elde edin. Güvenli veri depolama, ETL süreçleri ve özel dashboard çözümleri.",
+    features: ["Database Design", "Data Analytics", "Dashboard & BI", "Real-time Monitoring", "Data Migration"]
   },
   {
-    icon: Palette,
-    title: "UI/UX Tasarım",
-    description: "Kullanıcı araştırması ve veri odaklı tasarım yaklaşımı ile markanıza özel, modern ve kullanıcı dostu arayüzler tasarlıyoruz. Dönüşüm odaklı deneyimler yaratıyoruz.",
-    features: ["User Research", "Prototyping", "Design Systems", "Usability Testing", "Brand Identity"]
+    icon: Cloud,
+    title: "Cloud & DevOps Çözümleri",
+    description: "Bulut altyapınızı optimize edin, ölçeklenebilir sistemler kurun. AWS, Azure ve Google Cloud üzerinde güvenli, yüksek performanslı altyapılar oluşturuyoruz.",
+    features: ["Cloud Migration", "CI/CD Pipeline", "Container Orchestration", "Monitoring & Logging", "Auto Scaling"]
   },
   {
-    icon: Zap,
-    title: "Teknoloji Danışmanlığı",
-    description: "Dijital dönüşüm yolculuğunuzda stratejik teknoloji danışmanlığı ve 7/24 teknik destek. Projelerinizin her aşamasında yanınızdayız.",
-    features: ["Tech Consulting", "Mimari Tasarım", "24/7 Support", "Eğitim & Workshop", "Performans Optimizasyonu"]
+    icon: Shield,
+    title: "Güvenlik & Bakım",
+    description: "Uygulamalarınızın güvenliğini sağlayın, düzenli güncellemeler ve proaktif bakım ile sistemlerinizi 7/24 ayakta tutun. Siber güvenlik danışmanlığı ve penetrasyon testleri.",
+    features: ["Security Audit", "24/7 Monitoring", "Backup & Recovery", "Performance Tuning", "Technical Support"]
   }
 ];
 
@@ -49,7 +49,7 @@ const Services = () => {
             Sunduğumuz <span className="gradient-text">Hizmetler</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Her ölçekte işletme için kapsamlı yazılım çözümleri
+            İşinizi dijital dünyada zirveye taşıyacak kapsamlı teknoloji çözümleri
           </p>
         </div>
 
