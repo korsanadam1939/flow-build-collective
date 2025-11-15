@@ -1,5 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import ahmetAvatar from "@/assets/testimonial-ahmet.jpg";
+import zeynepAvatar from "@/assets/testimonial-zeynep.jpg";
+import mehmetAvatar from "@/assets/testimonial-mehmet.jpg";
 
 const Testimonials = () => {
   const testimonials = [
@@ -7,9 +10,9 @@ const Testimonials = () => {
       name: "Ahmet Yılmaz",
       company: "Tech Startup A.Ş.",
       role: "CEO",
-      content: "ngn digital ile çalışmak harika bir deneyimdi. Mobil uygulamamızı zamanında ve beklentilerimizin üzerinde teslim ettiler.",
+      content: "apexiscode ile çalışmak harika bir deneyimdi. Mobil uygulamamızı zamanında ve beklentilerimizin üzerinde teslim ettiler.",
       rating: 5,
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmet"
+      avatar: ahmetAvatar
     },
     {
       name: "Zeynep Kaya",
@@ -17,7 +20,7 @@ const Testimonials = () => {
       role: "Kurucu",
       content: "Web uygulamamız sayesinde satışlarımız %300 arttı. Profesyonel yaklaşımları ve teknik bilgileri mükemmel.",
       rating: 5,
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Zeynep"
+      avatar: zeynepAvatar
     },
     {
       name: "Mehmet Demir",
@@ -25,7 +28,7 @@ const Testimonials = () => {
       role: "İşletme Sahibi",
       content: "n8n otomasyon sistemleri sayesinde iş süreçlerimiz çok daha verimli hale geldi. Harika bir ekip!",
       rating: 5,
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mehmet"
+      avatar: mehmetAvatar
     }
   ];
 
