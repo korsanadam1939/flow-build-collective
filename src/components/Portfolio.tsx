@@ -57,15 +57,6 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="py-24 relative bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Başarı <span className="gradient-text">Hikayelerimiz</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Müşterilerimizle birlikte yarattığımız dijital başarı öyküleri
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card 
