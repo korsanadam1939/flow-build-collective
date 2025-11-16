@@ -44,15 +44,6 @@ const Services = () => {
   return (
     <section id="services" className="py-24 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Sunduğumuz <span className="gradient-text">Hizmetler</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            İşinizi dijital dünyada zirveye taşıyacak kapsamlı teknoloji çözümleri
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
