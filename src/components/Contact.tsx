@@ -31,69 +31,63 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative">
+    <section id="contact" className="py-20 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Projeleriniz İçin <span className="gradient-text">Bize Ulaşın</span>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
+            Projeleriniz İçin Bize Ulaşın
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
             Fikirlerinizi gerçeğe dönüştürelim. Size en uygun çözümü birlikte bulalım.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Contact Info */}
-          <div className="space-y-8 animate-slide-up">
-            <Card className="card-glass p-6 border-primary/20 hover:border-primary/40 transition-all">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary/20">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
+          <div className="space-y-4">
+            <Card className="p-4 border border-border/50 bg-card">
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-foreground mt-0.5" />
                 <div>
-                  <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-muted-foreground">erdemaga1939@gmail.com</p>
+                  <h3 className="text-sm font-semibold mb-1 text-foreground">Email</h3>
+                  <p className="text-sm text-muted-foreground">erdemaga1939@gmail.com</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="card-glass p-6 border-primary/20 hover:border-primary/40 transition-all">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary/20">
-                  <Phone className="w-6 h-6 text-primary" />
-                </div>
+            <Card className="p-4 border border-border/50 bg-card">
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-foreground mt-0.5" />
                 <div>
-                  <h3 className="font-semibold mb-1">Telefon</h3>
-                  <p className="text-muted-foreground">+90 551 627 93 79</p>
+                  <h3 className="text-sm font-semibold mb-1 text-foreground">Telefon</h3>
+                  <p className="text-sm text-muted-foreground">+90 551 627 93 79</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="card-glass p-6 border-primary/20 hover:border-primary/40 transition-all">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary/20">
-                  <MapPin className="w-6 h-6 text-primary" />
-                </div>
+            <Card className="p-4 border border-border/50 bg-card">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-foreground mt-0.5" />
                 <div>
-                  <h3 className="font-semibold mb-1">Adres</h3>
-                  <p className="text-muted-foreground">İstanbul, Türkiye</p>
+                  <h3 className="text-sm font-semibold mb-1 text-foreground">Adres</h3>
+                  <p className="text-sm text-muted-foreground">İstanbul, Türkiye</p>
                 </div>
               </div>
             </Card>
 
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30">
-              <h3 className="text-2xl font-bold mb-2">Ücretsiz Danışmanlık</h3>
-              <p className="text-muted-foreground">
+            <Card className="p-6 border border-border/50 bg-muted/30">
+              <h3 className="text-base font-bold mb-2 text-foreground">Ücretsiz Danışmanlık</h3>
+              <p className="text-sm text-muted-foreground">
                 Projeleriniz hakkında 30 dakikalık ücretsiz danışmanlık için hemen iletişime geçin.
               </p>
-            </div>
+            </Card>
           </div>
 
           {/* Contact Form */}
-          <Card className="card-glass p-8 border-primary/20 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <Card className="p-6 border border-border/50 bg-card">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label htmlFor="name" className="block text-xs font-medium mb-2 text-foreground">
                   Adınız Soyadınız
                 </label>
                 <Input
@@ -102,12 +96,12 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Adınız Soyadınız"
                   required
-                  className="bg-background/50 border-primary/20 focus:border-primary"
+                  className="bg-background border-border"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label htmlFor="email" className="block text-xs font-medium mb-2 text-foreground">
                   Email Adresiniz
                 </label>
                 <Input
@@ -117,12 +111,12 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="ornek@email.com"
                   required
-                  className="bg-background/50 border-primary/20 focus:border-primary"
+                  className="bg-background border-border"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label htmlFor="message" className="block text-xs font-medium mb-2 text-foreground">
                   Mesajınız
                 </label>
                 <Textarea
@@ -131,19 +125,18 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Projeniz hakkında detaylar..."
                   required
-                  rows={6}
-                  className="bg-background/50 border-primary/20 focus:border-primary resize-none"
+                  rows={5}
+                  className="bg-background border-border resize-none"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity glow group"
-                size="lg"
+                className="w-full"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Gönderiliyor..." : "Mesaj Gönder"}
-                <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Send className="ml-2 w-4 h-4" />
               </Button>
             </form>
           </Card>

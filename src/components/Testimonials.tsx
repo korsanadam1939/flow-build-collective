@@ -36,25 +36,25 @@ const Testimonials = () => {
     <section className="py-20 px-4 bg-muted/20">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
             Müşterilerimiz Ne Diyor?
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
             Projelerimizi tamamlayan mutlu müşterilerimizin görüşleri
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="card-glass hover-scale">
+            <Card key={index} className="border border-border/50 bg-card">
               <CardContent className="pt-6">
-                <div className="flex mb-4">
+                <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    <Star key={i} className="w-4 h-4 fill-foreground text-foreground" />
                   ))}
                 </div>
                 
-                <p className="text-foreground mb-6 italic">
+                <p className="text-sm text-foreground mb-6">
                   "{testimonial.content}"
                 </p>
                 
@@ -62,11 +62,11 @@ const Testimonials = () => {
                   <img 
                     src={testimonial.avatar} 
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full"
+                    className="w-10 h-10 rounded-full"
                   />
                   <div>
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
+                    <p className="text-xs text-muted-foreground">
                       {testimonial.role}, {testimonial.company}
                     </p>
                   </div>
