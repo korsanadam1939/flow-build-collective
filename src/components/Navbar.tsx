@@ -16,23 +16,23 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-primary/30 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <Link to="/" className="text-2xl md:text-3xl font-bold hover:scale-105 transition-transform" style={{ color: '#d4ff00' }}>
+        <div className="flex items-center justify-between h-16">
+          <Link to="/" className="text-xl md:text-2xl font-bold text-foreground">
             apexiscode
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium px-4 py-2 rounded-lg transition-all ${
+                className={`text-sm px-4 py-2 rounded transition-colors ${
                   isActive(item.href)
-                    ? "text-primary bg-primary/10 shadow-sm"
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                    ? "text-foreground bg-muted"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.name}
@@ -45,22 +45,22 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-foreground"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 animate-fade-in">
+          <div className="md:hidden pb-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`block py-2 text-sm font-medium transition-colors ${
+                className={`block py-2 text-sm transition-colors ${
                   isActive(item.href)
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-primary"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.name}
