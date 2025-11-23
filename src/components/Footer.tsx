@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -42,23 +42,9 @@ const Footer = () => {
               <a 
                 href="#" 
                 className="w-8 h-8 flex items-center justify-center border border-border/50 rounded hover:border-border transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-              <a 
-                href="#" 
-                className="w-8 h-8 flex items-center justify-center border border-border/50 rounded hover:border-border transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
-              </a>
-              <a 
-                href="#" 
-                className="w-8 h-8 flex items-center justify-center border border-border/50 rounded hover:border-border transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-4 h-4" />
               </a>
             </div>
           </div>
