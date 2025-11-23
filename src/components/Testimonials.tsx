@@ -33,37 +33,47 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-muted/20">
-      <div className="container mx-auto">
+    <section className="py-20 px-4 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+      
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
-            Müşterilerimiz Ne Diyor?
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-gradient">Müşterilerimiz Ne Diyor?</span>
           </h2>
-          <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Projelerimizi tamamlayan mutlu müşterilerimizin görüşleri
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border border-border/50 bg-card">
+            <Card 
+              key={index} 
+              className="card-glass border-primary/20 hover-lift group"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <CardContent className="pt-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-foreground text-foreground" />
+                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                   ))}
                 </div>
                 
-                <p className="text-sm text-foreground mb-6">
+                <p className="text-sm text-foreground mb-6 leading-relaxed">
                   "{testimonial.content}"
                 </p>
                 
                 <div className="flex items-center gap-3">
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={testimonial.name}
-                    className="w-10 h-10 rounded-full"
-                  />
+                  <div className="relative">
+                    <img 
+                      src={testimonial.avatar} 
+                      alt={testimonial.name}
+                      className="w-10 h-10 rounded-full ring-2 ring-primary/20"
+                    />
+                  </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
                     <p className="text-xs text-muted-foreground">

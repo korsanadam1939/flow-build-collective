@@ -16,11 +16,11 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-primary/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-xl md:text-2xl font-bold text-foreground">
-            apexiscode
+          <Link to="/" className="text-xl md:text-2xl font-bold">
+            <span className="text-gradient">apexiscode</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -29,10 +29,10 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm px-4 py-2 rounded transition-colors ${
+                className={`text-sm px-4 py-2 rounded transition-all duration-300 ${
                   isActive(item.href)
-                    ? "text-foreground bg-muted"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-foreground bg-primary/10 border border-primary/20"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                 }`}
               >
                 {item.name}
@@ -43,7 +43,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-foreground"
+            className="md:hidden text-primary"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4">
+          <div className="md:hidden pb-4 animate-fade-in">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -59,8 +59,8 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className={`block py-2 text-sm transition-colors ${
                   isActive(item.href)
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-primary"
                 }`}
               >
                 {item.name}

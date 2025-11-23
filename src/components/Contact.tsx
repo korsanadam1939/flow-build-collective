@@ -31,13 +31,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
-            Projeleriniz İçin Bize Ulaşın
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-gradient">Projeleriniz İçin Bize Ulaşın</span>
           </h2>
-          <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Fikirlerinizi gerçeğe dönüştürelim. Size en uygun çözümü birlikte bulalım.
           </p>
         </div>
@@ -45,9 +49,11 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-4">
-            <Card className="p-4 border border-border/50 bg-card">
+            <Card className="p-4 card-glass border-primary/20 hover-lift group">
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-foreground mt-0.5" />
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Mail className="w-5 h-5 text-primary" />
+                </div>
                 <div>
                   <h3 className="text-sm font-semibold mb-1 text-foreground">Email</h3>
                   <p className="text-sm text-muted-foreground">erdemaga1939@gmail.com</p>
@@ -55,9 +61,11 @@ const Contact = () => {
               </div>
             </Card>
 
-            <Card className="p-4 border border-border/50 bg-card">
+            <Card className="p-4 card-glass border-primary/20 hover-lift group">
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-foreground mt-0.5" />
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Phone className="w-5 h-5 text-primary" />
+                </div>
                 <div>
                   <h3 className="text-sm font-semibold mb-1 text-foreground">Telefon</h3>
                   <p className="text-sm text-muted-foreground">+90 551 627 93 79</p>
@@ -65,9 +73,11 @@ const Contact = () => {
               </div>
             </Card>
 
-            <Card className="p-4 border border-border/50 bg-card">
+            <Card className="p-4 card-glass border-primary/20 hover-lift group">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-foreground mt-0.5" />
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
                 <div>
                   <h3 className="text-sm font-semibold mb-1 text-foreground">Adres</h3>
                   <p className="text-sm text-muted-foreground">İstanbul, Türkiye</p>
@@ -75,7 +85,7 @@ const Contact = () => {
               </div>
             </Card>
 
-            <Card className="p-6 border border-border/50 bg-muted/30">
+            <Card className="p-6 card-glass border-primary/20 bg-gradient-to-br from-primary/10 to-transparent">
               <h3 className="text-base font-bold mb-2 text-foreground">Ücretsiz Danışmanlık</h3>
               <p className="text-sm text-muted-foreground">
                 Projeleriniz hakkında 30 dakikalık ücretsiz danışmanlık için hemen iletişime geçin.
@@ -84,7 +94,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="p-6 border border-border/50 bg-card">
+          <Card className="p-6 card-glass border-primary/20">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-xs font-medium mb-2 text-foreground">
@@ -96,7 +106,7 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Adınız Soyadınız"
                   required
-                  className="bg-background border-border"
+                  className="bg-background border-primary/20 focus:border-primary"
                 />
               </div>
 
@@ -111,7 +121,7 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="ornek@email.com"
                   required
-                  className="bg-background border-border"
+                  className="bg-background border-primary/20 focus:border-primary"
                 />
               </div>
 
@@ -126,13 +136,13 @@ const Contact = () => {
                   placeholder="Projeniz hakkında detaylar..."
                   required
                   rows={5}
-                  className="bg-background border-border resize-none"
+                  className="bg-background border-primary/20 focus:border-primary resize-none"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full"
+                className="w-full glow"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Gönderiliyor..." : "Mesaj Gönder"}
