@@ -1,11 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-background pt-20">
       <div className="container mx-auto px-4 text-center max-w-4xl">
@@ -28,18 +25,26 @@ const Hero = () => {
           <Button 
             size="lg" 
             className="text-base"
-            onClick={scrollToContact}
+            asChild
           >
-            Hemen Başlayın
-            <ArrowRight className="ml-2 w-4 h-4" />
+            <a 
+              href="https://wa.me/905516279379?text=Merhaba%20yazılım%20hizmetleriniz%20ile%20ilgili%20bilgi%20alabilir%20miyim%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hemen Başlayın
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </a>
           </Button>
           <Button 
             size="lg" 
             variant="outline" 
             className="text-base"
-            onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+            asChild
           >
-            Hizmetlerimiz
+            <Link to="/services">
+              Hizmetlerimiz
+            </Link>
           </Button>
         </div>
 
