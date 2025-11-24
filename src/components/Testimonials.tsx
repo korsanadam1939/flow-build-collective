@@ -35,8 +35,10 @@ const Testimonials = () => {
   return (
     <section className="py-20 px-4 relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/8 rounded-full blur-2xl animate-float-reverse"></div>
+      </div>
       
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-12">
