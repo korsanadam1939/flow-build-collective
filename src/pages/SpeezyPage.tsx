@@ -4,6 +4,9 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Users, Gamepad2, Award } from "lucide-react";
+import storyReadingImage from "@/assets/speezy-story-reading.png";
+import roleplayGameImage from "@/assets/speezy-roleplay-game.png";
+import wordGameImage from "@/assets/speezy-word-game.png";
 
 const SpeezyPage = () => {
   const features = [
@@ -11,19 +14,19 @@ const SpeezyPage = () => {
       icon: <BookOpen className="w-12 h-12" />,
       title: "Hikaye Okuma",
       description: "Seviyene göre özel İngilizce hikayeler. Kelimelere basarak anlamlarını anında öğren.",
-      image: "/placeholder-story.jpg",
+      image: storyReadingImage,
     },
     {
       icon: <Users className="w-12 h-12" />,
       title: "Rol Oyunu",
       description: "Karakterini seç ve hikayenin içinde yeralarak İngilizce pratik yap.",
-      image: "/placeholder-roleplay.jpg",
+      image: roleplayGameImage,
     },
     {
       icon: <Gamepad2 className="w-12 h-12" />,
       title: "Kelime Oyunu",
       description: "Biliyorum/Bilmiyorum seçenekleriyle kelime çalış. Kelimeleri kaydet ve sonra tekrar et.",
-      image: "/placeholder-words.jpg",
+      image: wordGameImage,
     },
     {
       icon: <Award className="w-12 h-12" />,
