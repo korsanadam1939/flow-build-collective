@@ -3,7 +3,9 @@ import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Smartphone, Globe, Workflow } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Smartphone, Globe, Workflow, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const highlights = [
@@ -53,6 +55,15 @@ const Home = () => {
                 </CardHeader>
               </Card>
             ))}
+          </div>
+          
+          <div className="flex justify-center mt-12">
+            <Link to="/hizmetler">
+              <Button size="lg" className="group">
+                Tüm Hizmetleri Görüntüle
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
           
           {/* Additional Features Grid */}
