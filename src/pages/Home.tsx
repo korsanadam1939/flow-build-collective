@@ -36,9 +36,11 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text">
-              Dijital Çözümlerinizde Yanınızdayız
-            </h2>
+            <Link to="/hizmetler" className="inline-block hover:opacity-80 transition-opacity">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text cursor-pointer">
+                Hizmetlerimiz
+              </h2>
+            </Link>
             <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
               Modern teknolojiler ve uzman ekibimizle projelerinizi hayata geçiriyoruz. 
               İnovatif çözümlerimizle işinizi geleceğe taşıyoruz.

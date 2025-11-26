@@ -1,16 +1,18 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Smartphone } from "lucide-react";
+import { Smartphone, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import mobileAppMockup from "@/assets/mobile-app-mockup.png";
 
 const projects = [
   {
-    title: "Rol Oyunu Mobil Uygulaması",
+    title: "Speezy - İngilizce Öğrenme Uygulaması",
     category: "Mobil Uygulama",
-    description: "İnteraktif hikaye anlatımı ve karakter geliştirme özellikleri ile zengin bir rol yapma oyunu deneyimi. Kullanıcılar karakterlerini özelleştirebilir ve kendi maceralarını yaratabilir.",
-    tags: ["React Native", "Firebase", "Game Design", "AI Integration"],
+    description: "Hikayeler, rol oyunları ve eğlenceli kelime oyunlarıyla İngilizce öğrenmenin en etkili yolu. Seviyenize özel içeriklerle pratik yapın ve kelimeleri anında öğrenin.",
+    tags: ["Flutter", "Supabase", "AI Integration", "Gamification"],
     image: mobileAppMockup,
-    metrics: "iOS & Android"
+    metrics: "iOS & Android",
+    link: "/speezy"
   }
 ];
 
@@ -36,9 +38,10 @@ const Portfolio = () => {
         </div>
         
         {projects.map((project, index) => (
-          <div 
+          <Link 
+            to={project.link}
             key={project.title}
-            className="card-glass border-primary/30 rounded-lg overflow-hidden hover-lift group relative"
+            className="block card-glass border-primary/30 rounded-lg overflow-hidden hover-lift group relative"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             {/* Card glow effect */}
@@ -85,9 +88,14 @@ const Portfolio = () => {
                   <Smartphone className="w-4 h-4" />
                   <span>{project.metrics}</span>
                 </div>
+                
+                <div className="flex items-center gap-2 text-sm text-primary pt-4 font-medium group-hover:gap-3 transition-all">
+                  <span>Detayları Görüntüle</span>
+                  <ExternalLink className="w-4 h-4" />
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
