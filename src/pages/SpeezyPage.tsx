@@ -7,6 +7,7 @@ import { BookOpen, Users, Gamepad2, Award } from "lucide-react";
 import storyReadingImage from "@/assets/speezy-story-reading.png";
 import roleplayGameImage from "@/assets/speezy-roleplay-game.png";
 import wordGameImage from "@/assets/speezy-word-game.png";
+import wordRepeatImage from "@/assets/speezy-word-repeat.png";
 
 const SpeezyPage = () => {
   const features = [
@@ -32,7 +33,7 @@ const SpeezyPage = () => {
       icon: <Award className="w-12 h-12" />,
       title: "Kelime Kurdu",
       description: "Ekran yarıya bölünür. Türkçe kelimenin İngilizce karşılığını bul ve seç.",
-      image: "/placeholder-match.jpg",
+      image: wordRepeatImage,
     },
   ];
 
