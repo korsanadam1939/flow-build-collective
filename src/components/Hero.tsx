@@ -54,7 +54,7 @@ const Hero = () => {
             className="text-base border-primary/30 hover:bg-primary/10 hover:border-primary transition-all duration-300"
             asChild
           >
-            <Link to="/services">
+            <Link to="/hizmetler">
               Hizmetlerimiz
             </Link>
           </Button>

@@ -6,23 +6,29 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Smartphone, Globe, Workflow, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import mobileAppMockup from "@/assets/mobile-app-mockup.png";
+import webAppMockup from "@/assets/web-app-mockup.png";
+import automationMockup from "@/assets/automation-mockup.png";
 
 const Home = () => {
   const highlights = [
     {
       icon: <Smartphone className="w-8 h-8 text-primary" />,
       title: "Mobil Uygulama",
-      description: "iOS ve Android için native performans"
+      description: "iOS ve Android için native performans",
+      image: mobileAppMockup
     },
     {
       icon: <Globe className="w-8 h-8 text-primary" />,
       title: "Web Uygulamaları",
-      description: "Modern ve responsive web çözümleri"
+      description: "Modern ve responsive web çözümleri",
+      image: webAppMockup
     },
     {
       icon: <Workflow className="w-8 h-8 text-primary" />,
       title: "n8n Otomasyon",
-      description: "İş süreçlerinizi otomatikleştirin"
+      description: "İş süreçlerinizi otomatikleştirin",
+      image: automationMockup
     }
   ];
 
@@ -49,12 +55,23 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {highlights.map((item, index) => (
-              <Card key={index} className="card-glass hover-scale group border-primary/20 hover:border-primary/50 transition-all duration-300">
+              <Card key={index} className="card-glass hover-scale group border-primary/20 hover:border-primary/50 transition-all duration-300 overflow-hidden">
                 <CardHeader>
                   <div className="mb-6 p-4 bg-primary/10 rounded-xl w-fit group-hover:bg-primary/20 transition-colors">{item.icon}</div>
                   <CardTitle className="text-2xl mb-3">{item.title}</CardTitle>
                   <CardDescription className="text-base">{item.description}</CardDescription>
                 </CardHeader>
+                {item.image && (
+                  <CardContent className="pt-0">
+                    <div className="relative overflow-hidden rounded-lg border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent p-4">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  </CardContent>
+                )}
               </Card>
             ))}
           </div>
