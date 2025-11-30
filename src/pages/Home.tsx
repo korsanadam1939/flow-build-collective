@@ -51,16 +51,16 @@ const Home = () => {
 
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <Rocket className="w-4 h-4 text-primary" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
+              <Rocket className="w-4 h-4 text-primary animate-bounce" style={{ animationDuration: '1s' }} />
               <span className="text-sm text-primary font-medium">ÖZEL ÇÖZÜMLER</span>
             </div>
             <Link to="/hizmetler" className="inline-block hover:opacity-80 transition-opacity">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient cursor-pointer">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient cursor-pointer animate-slide-up" style={{ animationDelay: '0.1s' }}>
                 Hizmetlerimiz
               </h2>
             </Link>
-            <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
+            <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
               Modern teknolojiler ve uzman ekibimizle projelerinizi hayata geçiriyoruz.
               İnovatif çözümlerimizle işinizi geleceğe taşıyoruz.
             </p>
@@ -68,12 +68,16 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {highlights.map((item, index) => (
-              <Card key={index} className="card-glass hover-lift group border-primary/20 hover:border-primary/50 transition-all duration-500 overflow-hidden relative">
+              <Card
+                key={index}
+                className="card-glass hover-lift group border-primary/20 hover:border-primary/50 transition-all duration-500 overflow-hidden relative animate-bounce-in"
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 <CardHeader className="relative z-10">
-                  <div className="mb-6 p-4 bg-primary/10 rounded-xl w-fit group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                  <div className="mb-6 p-4 bg-primary/10 rounded-xl w-fit group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 group-hover:animate-pulse">
                     {item.icon}
                   </div>
                   <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">{item.title}</CardTitle>
@@ -86,7 +90,7 @@ const Home = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700 relative z-10"
+                        className="w-full h-auto transform group-hover:scale-110 transition-transform duration-700 relative z-10"
                       />
                     </div>
                   </CardContent>
@@ -114,13 +118,13 @@ const Home = () => {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="group text-center p-8 rounded-2xl bg-card/30 border border-primary/10 hover:border-primary/40 hover:bg-card/50 transition-all duration-300 hover-lift"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group text-center p-8 rounded-2xl bg-card/30 border border-primary/10 hover:border-primary/40 hover:bg-card/50 transition-all duration-300 hover-lift animate-slide-up"
+                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110 group-hover:animate-spin-slow">
                   {feature.icon}
                 </div>
-                <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">{feature.title}</div>
+                <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors group-hover:animate-pulse">{feature.title}</div>
                 <div className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</div>
               </div>
             ))}
