@@ -11,6 +11,7 @@ const Navbar = () => {
     { name: "Ana Sayfa", href: "/" },
     { name: "Hizmetler", href: "/hizmetler" },
     { name: "Portföy", href: "/portfoy" },
+    { name: "Sosyal Medya", href: "/sosyal-medya" },
     { name: "Speezy", href: "/speezy" },
     { name: "İletişim", href: "/iletisim" },
   ];
