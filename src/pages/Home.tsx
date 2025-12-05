@@ -2,15 +2,34 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Smartphone, Globe, Workflow, ArrowRight, Zap, Shield, Rocket, Clock, CheckCircle2, Code2, Palette, Target } from "lucide-react";
 import { Link } from "react-router-dom";
-import mobileAppMockup from "@/assets/mobile-app-mockup.png";
-import webAppMockup from "@/assets/web-app-mockup.png";
-import automationMockup from "@/assets/automation-mockup.png";
+import { useState, useEffect } from "react";
+// Mock imports for images - replace with actual imports
+// import mobileAppMockup from "@/assets/mobile-app-mockup.png";
+// import webAppMockup from "@/assets/web-app-mockup.png";
+// import automationMockup from "@/assets/automation-mockup.png";
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Mock images for now - replace with actual imports
+  const mobileAppMockup = "";
+  const webAppMockup = "";
+  const automationMockup = "";
+
   const highlights = [
     {
       icon: <Smartphone className="w-8 h-8 text-primary" />,
@@ -32,8 +51,12 @@ const Home = () => {
     }
   ];
 
+  if (isLoading) {
+    return <LoadingSpinner size="lg" />;
+  }
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
       
@@ -47,13 +70,18 @@ const Home = () => {
           <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-primary/30 rounded-full animate-float-reverse" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
           <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-primary/50 rounded-full animate-float" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
           <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-primary/40 rounded-full animate-float-reverse" style={{ animationDuration: '6s' }}></div>
+          
+          {/* Additional floating elements */}
+          <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-accent/40 rounded-full animate-orbit opacity-70"></div>
+          <div className="absolute top-1/5 right-1/5 w-2 h-2 bg-primary/30 rounded-full animate-float-slow opacity-60"></div>
+          <div className="absolute bottom-1/5 left-1/5 w-1.5 h-1.5 bg-accent/50 rounded-full animate-pulse-glow opacity-50"></div>
         </div>
 
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
               <Rocket className="w-4 h-4 text-primary animate-bounce" style={{ animationDuration: '1s' }} />
-              <span className="text-sm text-primary font-medium">ÖZEL ÇÖZÜMLER</span>
+              <span className="text-sm text-foreground font-medium">ÖZEL ÇÖZÜMLER</span>
             </div>
             <Link to="/hizmetler" className="inline-block hover:opacity-80 transition-opacity">
               <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient cursor-pointer animate-slide-up" style={{ animationDelay: '0.1s' }}>
@@ -75,6 +103,10 @@ const Home = () => {
               >
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
+                {/* Corner accent elements */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-bl-full group-hover:bg-primary/20 transition-all duration-500"></div>
+                <div className="absolute bottom-0 left-0 w-20 h-20 bg-primary/5 rounded-tr-full group-hover:bg-primary/20 transition-all duration-500"></div>
 
                 <CardHeader className="relative z-10">
                   <div className="mb-6 p-4 bg-primary/10 rounded-xl w-fit group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 group-hover:animate-pulse">
@@ -121,11 +153,22 @@ const Home = () => {
                 className="group text-center p-8 rounded-2xl bg-card/30 border border-primary/10 hover:border-primary/40 hover:bg-card/50 transition-all duration-300 hover-lift animate-slide-up"
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110 group-hover:animate-spin-slow">
-                  {feature.icon}
+                {/* Animated background element */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-transparent animate-gradient-shift"></div>
                 </div>
-                <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors group-hover:animate-pulse">{feature.title}</div>
-                <div className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</div>
+                
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110 group-hover:animate-spin-slow">
+                    {feature.icon}
+                  </div>
+                  <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors group-hover:animate-pulse">{feature.title}</div>
+                  <div className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</div>
+                </div>
+                
+                {/* Corner decorative elements */}
+                <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary/20 group-hover:bg-primary/40 transition-all duration-300"></div>
+                <div className="absolute bottom-2 left-2 w-2 h-2 rounded-full bg-primary/20 group-hover:bg-primary/40 transition-all duration-300"></div>
               </div>
             ))}
           </div>

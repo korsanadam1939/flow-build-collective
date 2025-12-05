@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-xl font-bold mb-3">
-              <span className="text-gradient">apexiscode</span>
+              <span className="text-gradient">Apexiscode</span>
             </h3>
             <p className="text-sm text-muted-foreground max-w-md">
               Modern teknolojiler ile işinizi dijital dünyada zirveye taşıyoruz. 
@@ -24,17 +24,17 @@ const Footer = () => {
             <h4 className="text-sm font-semibold mb-3 text-foreground">Hızlı Linkler</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#services" className="hover:text-primary transition-colors">
+                <a href="/hizmetler" className="hover:text-primary transition-colors">
                   Hizmetlerimiz
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="hover:text-primary transition-colors">
+                <a href="/portfoy" className="hover:text-primary transition-colors">
                   Projelerimiz
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-primary transition-colors">
+                <a href="/iletisim" className="hover:text-primary transition-colors">
                   İletişim
                 </a>
               </li>
